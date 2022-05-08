@@ -252,3 +252,11 @@ class BayesianMnistNet(VIModule):
 		
 		x = self.linear2(x, stochastic=stochastic)
 		return nn.functional.log_softmax(x, dim=-1)
+
+if __name__ == "__main__":
+	initMeanZero = False
+	in_features = 64
+	out_features = 32
+	groups = 1
+
+	print(torch.rand(out_features, int(in_features/groups))-0.5)
